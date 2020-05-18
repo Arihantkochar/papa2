@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "228133334463",
+    "firebase_url": "https://papa2-a3ed2.firebaseio.com",
+    "project_id": "papa2-a3ed2",
+    "storage_bucket": "papa2-a3ed2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:228133334463:android:63cb5c1e59d651a424850a",
+        "android_client_info": {
+          "package_name": "com.ak.papa2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "228133334463-5jntm4t24b1320hl4229mr1cbafvfoqd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoGXStdyOOjp_D1x-H6y29WnW5iANDtyk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "228133334463-5jntm4t24b1320hl4229mr1cbafvfoqd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
