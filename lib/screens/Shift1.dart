@@ -27,7 +27,7 @@ class Shift1 extends StatefulWidget {
 }
 final dR = Firestore.instance;
 var dt = DateTime.now();
-var cDt = DateFormat.yMMMEd().format(dt);
+String cDt = DateFormat.yMMMEd().format(dt) ;
 var ldt = dt.subtract(Duration(days: 1));
 var lDt = DateFormat.yMMMEd().format(ldt);
 class _Shift1State extends State<Shift1> {
@@ -270,7 +270,7 @@ class RowSp extends StatelessWidget {
 }
 void PutReportS1() async{
   await dR.collection("report").document(cDt).setData({
-    'date': cDt,
+    'date': cDt.toString(),
     't1':t1.text,
     't2':t2.text,
     't3':t3.text,

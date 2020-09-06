@@ -29,7 +29,7 @@ class _HistoryState extends State<History> {
         }),
       ),
       body: Container(
-        child: FutureBuilder(future: getData(),
+        child: StreamBuilder(stream: Firestore.instance.collection('report').snapshots(),
             builder: (_, snapshot) {
          if (snapshot.connectionState == ConnectionState.waiting) {
             return Center(
@@ -37,19 +37,28 @@ class _HistoryState extends State<History> {
             );
           }
           else {
-           return ListView.builder(itemCount: snapshot.data.length,
+           return ListView.builder(itemCount: snapshot.data.documents.length,
                itemBuilder: (_, index) {
                  return Padding(
                    padding: const EdgeInsets.all(8.0),
-                   child: Card(
-                     child: Center(
-                       child: ListTile(title: Text(
-                         snapshot.data[index].data["date"],
-                         style: blueTextStyle,),
-                         onTap: () {
-                           Navigator.push(context, MaterialPageRoute(
-                               builder: (context) => Record(index)));
-                         },
+                   child: InkWell(
+                     onDoubleTap: () {
+                       print("tried deleting");
+                       Firestore.instance.collection('report').document(
+                           snapshot.data.documents[index]["date"]
+                       ).delete();
+
+                     },
+                     child: Card(
+                       child: Center(
+                         child: ListTile(title: Text(
+                           snapshot.data.documents[index]["date"],
+                           style: blueTextStyle,),
+                           onTap: () {
+                             Navigator.push(context, MaterialPageRoute(
+                                 builder: (context) => Record(index)));
+                           },
+                         ),
                        ),
                      ),
                    ),

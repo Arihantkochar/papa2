@@ -95,7 +95,7 @@ void PutReportS3() async{
     't47':t47.text,
     't48':t48.text,
     't49':t49.text,
-    't50':t51.text,
+    't50':t50.text,
     't51':t51.text,
 
   });
